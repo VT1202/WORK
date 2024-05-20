@@ -1,0 +1,37 @@
+ try: 
+    num1 = int(input("Please enter the first number within range (-100 to +100): ")) 
+    num2 = int(input("Please enter the second number within range (-100 to +100): ")) 
+    if (num1 < -100 or num2 < -100): 
+        raise NameError("Below-100") 
+    if (num1 > 100 or num2 > 100): 
+        raise NameError("Above100") 
+    quotient = num1 / num2 
+    print (f"So {num1} / {num2} = {quotient}") 
+     
+except ValueError as ve: 
+    print ("ValueError: Invalid input has been provided...!!!") 
+    print ("ValueError: So the error type is", type(ve)) 
+    print ("ValueError: So the error message is", ve) 
+ 
+except ZeroDivisionError as zde: 
+    print ("ZeroDivisionError: Division by ZERO is Illegal...!!!") 
+    print ("ZeroDivisionError: So the error type is", type(zde)) 
+    print ("ZeroDivisionError: So the error message is", zde) 
+ 
+except NameError as ne: 
+    print ("NameError: Input value is out of range...") 
+    if (str(ne) == "Below-100"): 
+        print ("NameError: Input value is LESS THAN -100...") 
+    elif (str(ne) == "Above100"): 
+        print ("NameError: Input value is GREATER THAN 100...") 
+except Exception as ex: 
+    print ("Exception: Some other exception has occurred...!!!") 
+    print ("Exception: So the error type is", type(ex)) 
+    print ("Exception: So the error message is", ex) 
+else: 
+    print ("Else: This is the Else block executing...") 
+    print ("Else: Had a smooth execution...") 
+finally: 
+    print ("Finally: This is Finally block executing...") 
+    print ("Finally: This block executes always...") 
+print ("End of the program...") 
